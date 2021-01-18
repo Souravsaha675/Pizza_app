@@ -25,6 +25,10 @@ app.get("/", (req, res) => res.render("home"));
 
 app.get("/cart", (req, res) => res.render("customers/cart"));
 
+app.get("/login", (req, res) => res.render("auth/login"));
+
+app.get("/signup", (req, res) => res.render("auth/signup"));
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}.`);
 });

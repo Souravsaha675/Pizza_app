@@ -57,3 +57,31 @@ section.cartPage .amount {
   color: #fe5f1e;
 }
 
+section.login {
+  background: #f8f8f8;
+  min-height: 90vh;
+}
+
+section.login a {
+  color: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+
+section.login a:hover {
+  color: #b23301;
+}
+
+section.signup {
+  background: #f8f8f8;
+  min-height: 90vh;
+}
+
+section.signup a {
+  color: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+
+section.signup a:hover {
+  color: #b23301;
+}
+
