@@ -1,4 +1,4 @@
-const users = require("../../models/user");
+const Users = require("../../models/user");
 const bcrypt = require("bcrypt");
 
 function authController() {
@@ -21,7 +21,7 @@ function authController() {
         return res.redirect("/signup");
       }
 
-      users.exists({ email }, (err, result) => {
+      Users.exists({ email }, (err, result) => {
         if (result) {
           req.flash("error", "Email alrady exits");
           req.flash("name", name);
@@ -32,7 +32,7 @@ function authController() {
 
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      const user = new users({
+      const user = new Users({
         name,
         email,
         password: hashedPassword,

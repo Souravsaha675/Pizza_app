@@ -4,12 +4,14 @@ const path = require("path");
 const express = require("express");
 const ejs = require("ejs");
 const expressLayout = require("express-ejs-layouts");
+const passport = require("passport");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("express-flash");
 const MongoDbStore = require("connect-mongo")(session);
 
 const Routes = require("./routes/web");
+const passportInit = require("./app/config/passport");
 
 const app = express();
 
@@ -34,6 +36,11 @@ connection
   .catch((err) => {
     console.log("connection error...");
   });
+
+//Passport cofig
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Sessions-store
 
