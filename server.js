@@ -60,6 +60,7 @@ app.use(flash());
 
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //Global Middleware
 

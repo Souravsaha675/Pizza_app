@@ -9,6 +9,8 @@ function initRoutes(app) {
 
   app.get("/signup", authController().signup);
 
+  app.post("/signup", authController().postSignUp);
+
   app.get("/cart", cartController().index);
 
   app.post("/update-cart", cartController().update);
