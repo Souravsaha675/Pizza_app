@@ -37,11 +37,6 @@ connection
     console.log("connection error...");
   });
 
-//Passport cofig
-passportInit(passport);
-app.use(passport.initialize());
-app.use(passport.session());
-
 // Sessions-store
 
 let mongoStore = new MongoDbStore({
@@ -61,6 +56,11 @@ app.use(
   })
 );
 
+//Passport cofig
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 
 //Assets
@@ -73,6 +73,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   res.locals.session = req.session;
+  res.locals.user = req.user;
   next();
 });
 
