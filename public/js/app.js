@@ -5313,6 +5313,13 @@ addToCart.forEach(function (btn) {
     updateCart(pizza); //console.log(pizza);
   });
 });
+var alertMessage = document.querySelector("#success-alert");
+
+if (alertMessage) {
+  setTimeout(function () {
+    alertMessage.remove();
+  }, 2000);
+}
 
 /***/ }),
 
